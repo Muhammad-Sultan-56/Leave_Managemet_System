@@ -1,0 +1,11 @@
+.statics:hover{
+    transition: all 0.3s ease;
+    transform:  scale(1.03);
+    cursor: pointer;
+}
+.bg-primary{
+    background-color: #4fa8f1 !important;
+}
+.text-primary{
+    color: #4fa8f1 !important;
+}
