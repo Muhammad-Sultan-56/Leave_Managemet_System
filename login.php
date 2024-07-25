@@ -83,13 +83,7 @@ if (isset($_POST['login'])) {
 
   <!-- js links -->
   <?php include("./includes/js-links.php") ?>
-  <script>
-    var notification = document.getElementById("notification");
 
-    setTimeout(() => {
-      notification.style.display = "none";
-    }, 3000)
-  </script>
 
 </body>
 

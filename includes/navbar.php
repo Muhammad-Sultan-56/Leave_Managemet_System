@@ -28,7 +28,7 @@
                             <li>
                                 <a class="dropdown-item" href="departments.php">Departments</a>
                             </li>
-                            <li><a class="dropdown-item" href="#">Employees</a></li>
+                            <li><a class="dropdown-item" href="employees.php">Employees</a></li>
                             <li>
                                 <a class="dropdown-item" href="leave-type.php">Leave Type</a>
                             </li>

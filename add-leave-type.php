@@ -1,22 +1,22 @@
 <?php
 include("./includes/config.php");
 $msg = "";
-if (isset($_POST['add-depart'])) {
-    $department = mysqli_real_escape_string($conn, $_POST['department']);
+if (isset($_POST['add-leave'])) {
+    $leave = mysqli_real_escape_string($conn, $_POST['leave']);
 
     // get data from database to check if already exist
-    $select_qry = "SELECT * FROM departments WHERE `department_name`='$department'";
+    $select_qry = "SELECT * FROM leave_type WHERE `leave_type`='$leave'";
     $result = mysqli_query($conn, $select_qry);
     if (mysqli_num_rows($result) > 0) {
-        $msg = "This Department is Already Exist...";
+        $msg = "This Leave Type is Already Exist...";
     } else {
-        $insert_qry = "INSERT INTO `departments`( `department_name`) VALUES ('$department')";
+        $insert_qry = "INSERT INTO `leave_type`( `leave_type`) VALUES ('$leave')";
         $result = mysqli_query($conn, $insert_qry);
 
         session_start();
-        $_SESSION['status'] = "Department has been Added Successfully...!";
+        $_SESSION['status'] = "Leave Type has been Added Successfully...!";
 
-        header("Location:departments.php");
+        header("Location:leave-type.php");
     }
 }
 
@@ -46,7 +46,7 @@ if (isset($_POST['add-depart'])) {
             <!-- heading -->
             <div class="col-md-6">
                 <h5>
-                    <i class="fa-solid fa-plus  text-primary"></i> Add New Department
+                    <i class="fa-solid fa-plus  text-primary"></i> Add Leave Type
                 </h5>
             </div>
 
@@ -67,14 +67,14 @@ if (isset($_POST['add-depart'])) {
             <div class="row bg-white p-2 shadow shadow-sm my-3">
                 <div class="col-md-6 p-2">
                     <div class="mb-3">
-                        <label for="department" class="form-label">Department Name</label>
-                        <input type="text" class="form-control" id="department" placeholder="Enter here..." name="department" required>
+                        <label for="department" class="form-label">Leave Type</label>
+                        <input type="text" class="form-control" id="department" placeholder="Enter here..." name="leave" required>
                     </div>
                 </div>
                 <div class="col-md-3 p-2  align-self-center">
                     <div class="d-grid">
                         <label class="form-label d-none d-md-block mt-1"></label>
-                        <button class="btn btn-primary" name="add-depart" type="submit">Submit</button>
+                        <button class="btn btn-primary" name="add-leave" type="submit">Submit</button>
                     </div>
                 </div>
             </div>

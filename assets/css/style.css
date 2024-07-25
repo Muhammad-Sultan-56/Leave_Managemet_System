@@ -9,3 +9,11 @@
 .text-primary{
     color: #4fa8f1 !important;
 }
+
+.btn-primary{
+        background-color: #4fa8f1 !important;
+        border: none;
+}
+.btn-primary:hover{
+            background-color: #3d94da !important;
+}
