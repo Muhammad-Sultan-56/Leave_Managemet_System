@@ -35,7 +35,7 @@
             </h5>
 
             <div>
-                <a href="add-department.php" class="btn bg-primary text-white">Add Employee</a>
+                <a href="add-employee.php" class="btn bg-primary text-white">Add Employee</a>
             </div>
         </div>
 

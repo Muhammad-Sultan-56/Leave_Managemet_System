@@ -20,20 +20,23 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">Apply Leave</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Settings
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="departments.php">Departments</a>
-                            </li>
-                            <li><a class="dropdown-item" href="employees.php">Employees</a></li>
-                            <li>
-                                <a class="dropdown-item" href="leave-type.php">Leave Type</a>
-                            </li>
-                        </ul>
-                    </li>
+
+                    <?php if ($_SESSION['role'] == 1) : ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Settings
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="departments.php">Departments</a>
+                                </li>
+                                <li><a class="dropdown-item" href="employees.php">Employees</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="leave-type.php">Leave Type</a>
+                                </li>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
 
                     <li class="nav-item">
                         <a class="nav-link text-white" href="logout.php">Logout</a>
@@ -44,7 +47,7 @@
                     <span class="fs-5">
                         <i class="fa-solid fa-circle-user fs-3"></i>
                         Welcome!
-                        <span class="text-white fw-bold ms-2">Muhammad Sultan</span></span>
+                        <span class="text-white fw-bold ms-2"><?= $_SESSION['name'] ?></span></span>
                 </div>
             </div>
         </div>
