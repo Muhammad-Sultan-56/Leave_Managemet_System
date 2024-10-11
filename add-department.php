@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("./includes/config.php");
 $msg = "";
 if (isset($_POST['add-depart'])) {
@@ -13,7 +14,7 @@ if (isset($_POST['add-depart'])) {
         $insert_qry = "INSERT INTO `departments`( `department_name`) VALUES ('$department')";
         $result = mysqli_query($conn, $insert_qry);
 
-        session_start();
+
         $_SESSION['status'] = "Department has been Added Successfully...!";
 
         header("Location:departments.php");

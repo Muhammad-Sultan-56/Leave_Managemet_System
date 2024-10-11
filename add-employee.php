@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include("./includes/config.php");
 $msg = "";
 if (isset($_POST['add-employee'])) {
@@ -23,7 +25,7 @@ if (isset($_POST['add-employee'])) {
          VALUES ('$name','$email','$cnic','$mobile','$password','$department','$role','$address')";
         $result = mysqli_query($conn, $insert_qry);
 
-        session_start();
+
         $_SESSION['status'] = "Employee has been Added Successfully...!";
 
         header("Location:employees.php");

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include("./includes/config.php");
 $msg = "";
 if (isset($_POST['add-leave'])) {
@@ -13,7 +15,7 @@ if (isset($_POST['add-leave'])) {
         $insert_qry = "INSERT INTO `leave_type`( `leave_type`) VALUES ('$leave')";
         $result = mysqli_query($conn, $insert_qry);
 
-        session_start();
+
         $_SESSION['status'] = "Leave Type has been Added Successfully...!";
 
         header("Location:leave-type.php");
